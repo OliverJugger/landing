@@ -1,0 +1,198 @@
+<?php     
+require 'db/header.php';
+if ( !isset($_SESSION) ) session_start();
+/*if (isset($_SESSION['connexion'])){
+echo "Bienvenue," .$_SESSION["connexion"]["first_name"]. " " .$_SESSION["connexion"]["last_name"];
+}*/
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+
+    <title>Interface d'administration - Thor</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="../css/agency.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+    <link href="diagnostic.css" rel="stylesheet">
+
+    <!-- TIMELINE --> 
+
+     <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../timeline/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../timeline/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../timeline/morrisjs/morris.css" rel="stylesheet">
+
+
+  </head>
+
+  <body id="page-top">
+    <!-- Fleche -->
+    <!-- <div class="fixed-bottom">TEST TEST TEST</div> -->
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top">Laurent Mignot</a> -->          
+        <h1 class="h2 font-weight-bold" style="color:white;"><i class='fa fa-battery-bolt my-icon'></i> THOR</h1>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../index.html">Administration de la batterie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Diagnostic</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="../statistiques/statistiques.html">Statistiques</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <!--
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-lead-in">Bienvenue Sur Mon Site Officiel</div>
+          <div class="intro-heading text-uppercase">Laurent Mignot</div>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Sculpteur &amp; Peintre</a>
+        </div>
+      </div>
+    </header>
+  -->
+    <!-- Services -->
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Diagnostic</h2>
+            <h3 class="section-subheading text-muted">Vous trouverez ci-dessous les statistiques analysées par votre batterie Thor.</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-5 text-center progressbar">
+              <div class="progress progress-striped">
+                <div class="line stripesLoader" style="background-position:50%; background-color:green"></div>
+              </div>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-8 text-center">
+            <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-clock"></i> Chronologie des changements d'état
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <ul class="timeline">
+                            <li>
+                                <div class="timeline-badge success"><i class="fa fa-plug"></i>
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">Mise en charge de la batterie</h4>
+                                        <p><small class="text-muted"><i class="fa fa-clock"></i> Il y a 1 heure</small>
+                                        </p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Le système de recharge de batterie s'est activé automatiquement après les 10 minutes qui suivent.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-inverted">
+                                <div class="timeline-badge danger"><i class="fa fa-battery-slash"></i>
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">La batterie est vide</h4>
+                                        <p><small class="text-muted"><i class="fa fa-clock"></i> Il y a 1 heure et 10 minutes</small>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>La batterie a utiliser tout son stock d'énergie, elle se rechargera automatiquement dans 10 minutes.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="timeline-badge success"><i class="fa fa-battery-full"></i>
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">La batterie est rechargée</h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam facilis enim eaque, tenetur nam id qui vel velit similique nihil iure molestias aliquam, voluptatem totam quaerat, magni commodi quisquam.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="../js/jqBootstrapValidation.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="../js/agency.min.js"></script>
+
+
+    <!-- TIMELINE -->
+
+     <!-- Metis Menu Plugin JavaScript -->
+    <script src="../timeline/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="../timeline/raphael/raphael.min.js"></script>
+    <script src="../timeline/morrisjs/morris.min.js"></script>
+    <script src="../timeline/data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../timeline/dist/js/sb-admin-2.js"></script>
+
+  </body>
+
+</html>
