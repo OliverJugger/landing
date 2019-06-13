@@ -19,10 +19,6 @@ a:hover {
   color: #fed136 !important;
 }
 
-.text-center{
-  margin:auto;
-}
-
 h1,
 h2,
 h3,
@@ -47,7 +43,7 @@ section h3.section-subheading {
   font-size: 16px;
   font-weight: 400;
   font-style: italic;
-  margin-bottom: 40px;
+  margin-bottom: 75px;
   text-transform: none;
   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -102,7 +98,7 @@ img::-moz-selection {
 }
 
 #mainNav {
-  background-color: #7CC128;
+  background-color: #212529;
 }
 
 #mainNav .navbar-toggler {
@@ -117,12 +113,12 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand {
-  color: white;
-  font-family: 'Helvetica Neue', Helvetica, Arial, cursive;
+  color: #fed136;
+  font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
-  color: white; /* active must be different color */
+  color: #fec503;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {
@@ -135,8 +131,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: white; /* active must be different color */
-  border-bottom: 1px solid white;
+  color: #fed136;
 }
 
 @media (min-width: 992px) {
@@ -161,7 +156,7 @@ img::-moz-selection {
   #mainNav.navbar-shrink {
     padding-top: 0;
     padding-bottom: 0;
-    background-color: #7CC128;
+    background-color: #212529;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -170,7 +165,7 @@ img::-moz-selection {
 }
 nav#mainNav{
 
-  background-color: #7CC128;
+  background-color: #212529;
 }
 
 header.masthead {
@@ -186,7 +181,7 @@ header.masthead {
   background-size: cover;
 }
 .collapse.navbar-collapse{
-  background-color: #7CC128;
+  background-color: #212529;
 }
 header.masthead .intro-text {
   padding-top: 150px;
@@ -385,7 +380,7 @@ div.container .oeuvre_img{
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  background-color: #7CC128;
+  background-color: #212529;
 }
 
 .portfolio-modal .close-modal .lr .rl {
@@ -397,7 +392,7 @@ div.container .oeuvre_img{
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-  background-color: #7CC128;
+  background-color: #212529;
 }
 
 .timeline {
@@ -612,7 +607,7 @@ section#about{
 }
 
 section#contact {
-  background-color: #7CC128;
+  background-color: #212529;
   /*background-image: url("../img/map-image.png");*/
   background-repeat: no-repeat;
   background-position: center;
@@ -706,7 +701,7 @@ ul.social-buttons li a {
   color: white;
   border-radius: 100%;
   outline: none;
-  background-color: #7CC128;
+  background-color: #212529;
 }
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
@@ -716,12 +711,4 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 
 #header_connexion{
   margin : auto;
-}
-
-.chart{
-  border : 1px solid #7CC128;
-}
-
-.green {
-  background-color : #5cb85c;
 }

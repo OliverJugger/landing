@@ -3,7 +3,7 @@ class DB{
 	private $host = 'localhost';
 	private $username = 'root'; //username et mot de passe mysql par défaut
 	private $password = '';
-	private $database = 'thor';
+	private $database = 'laurent';
 	private $db;
 	public function __construct($host = null, $username = null, $password = null, $database = null){
 		if($host != null){
@@ -32,31 +32,9 @@ class DB{
 		$req->execute($data);
 	}
 
-	/*
-
-	public function queryInsertADMIN(){
-		$password = "admin";
-		$md5Password = md5($password);
-		$query = 'INSERT INTO authentification VALUES ("admin","'.$md5Password. '")'; 
-		return $this->query($query);
-	}
-
-	*/
-
 	function login($email,$password){
 		$md5Password = md5($password);
 		$query = 'SELECT id,email, first_name, last_name FROM authentification WHERE email="'.$email.'" AND password ="'.$md5Password. '"'; 
-        $data = $this->query($query);
-        if(count($data)>0){
-            $_SESSION['connexion'] = $data[0];
-            return true;
-        }
-            return false;
-    }
-
-    function loginTHOR($password){
-		$md5Password = md5($password);
-		$query = 'SELECT id, login FROM authentification WHERE password ="'.$md5Password. '"'; 
         $data = $this->query($query);
         if(count($data)>0){
             $_SESSION['connexion'] = $data[0];

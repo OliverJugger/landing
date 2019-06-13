@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/favicon.ico">
+
+    <title>Nouvelle Oeuvre</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+      <!-- Custom styles for this template -->
+    <link href="../css/agency.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+
+      <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+           <a id="header_connexion" class="navbar-brand js-scroll-trigger" href="#">Laurent Mignot</a>
+      </div>
+    </nav>
+    
+      <div class="py-5 text-center">
+        <h2>Enregistrer une nouvelle oeuvre.</h2>
+        <p class="lead">Veuillez remplir les champs suivant pour enregistrer votre nouvelle oeuvre, elle apparaîtra directement dans votre galerie lors de l'enregistrement.</p>
+      </div>
+
+        <div class="col-md-12 order-md-1 text-center">
+          <h4 class="mb-4">Oeuvre</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="firstName">Nom</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Le nom de votre oeuvre.
+                </div>
+              </div>
+
+              <div class="col-md-5 mb-3">
+                <label for="country">Type d'Oeuvre</label>
+                <select class="custom-select d-block w-100" id="country" required>
+                  <option value="">Choisir...</option>
+                  <option value="1">Sculpture</option>
+                  <option value="2">Peinture</option>
+                  <option value="3">Objet du Quotidien</option>
+                  <option value="4">Autre</option>
+                </select>
+                <div class="invalid-feedback">
+                  Veuillez renseigner un champ.
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="firstName">Description</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Description de l'oeuvre.
+                </div>
+              </div>
+
+            </div>
+            
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Enregistrer l'Oeuvre</button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+         <p class="mt-5 mb-3 text-muted">&copy; Laurent Mignot Site Officiel - 2017-2018</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <script src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+</html>
